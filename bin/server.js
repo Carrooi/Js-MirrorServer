@@ -47,6 +47,10 @@ var server = http.createServer(function (request, response) {
 			delete data['sleep'];
 		}
 
+		if (typeof data['response'] !== 'undefined') {
+			data = data['response'];
+		}
+
 		if (sleep > MAX_SLEEP) {
 			throw new Error(request.method + ' ' + request.url + ': max allowed sleep is ' + MAX_SLEEP + 'ms, but ' + ' ' + sleep + 'ms given.');
 		}

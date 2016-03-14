@@ -44,6 +44,15 @@ describe('#mirror-server', function() {
 			});
 		});
 
+		it('should send custom data', function(done) {
+			fetch('GET', port, '/?response=hello&contentType=' + encodeURIComponent('text/plain'), null, function(res, data) {
+				expect(res.statusCode).to.be.equal(200);
+				expect(res.headers['content-type']).to.be.equal('text/plain');
+				expect(data).to.be.equal('hello');
+				done();
+			});
+		});
+
 		it('should change status code', function(done) {
 			fetch('GET', port, '/?statusCode=304', null, function(res) {
 				expect(res.statusCode).to.be.equal(304);
@@ -81,6 +90,15 @@ describe('#mirror-server', function() {
 				expect(res.statusCode).to.be.equal(200);
 				expect(res.headers['content-type']).to.be.equal('application/json');
 				expect(JSON.parse(data)).to.be.eql(expected);
+				done();
+			});
+		});
+
+		it('should send custom data', function(done) {
+			fetch('POST', port, '/', {response: 'hello', contentType: 'text/plain'}, function(res, data) {
+				expect(res.statusCode).to.be.equal(200);
+				expect(res.headers['content-type']).to.be.equal('text/plain');
+				expect(data).to.be.equal('hello');
 				done();
 			});
 		});

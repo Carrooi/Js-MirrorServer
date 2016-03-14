@@ -23,6 +23,9 @@ There are also few options which you can use to modify response from mirror-serv
 * `statusCode`: change status code (default is `200`)
 * `contentType`: change content type (default is `application/json`)
 
+Normally you're sending `GET` or `POST` data (object or list of parameters), but you can send also custom plain text 
+data with `response` parameter.
+
 ### GET
 
 ```js
