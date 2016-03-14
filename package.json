@@ -1,0 +1,27 @@
+{
+	"name": "mirror-server",
+	"description": "Simple mirroring server usefull for testing.",
+	"version": "0.0.1",
+	"license": "MIT",
+	"bin": "./bin/server.js",
+	"main": "./src/server.js",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Carrooi/Js-MirrorServer.git"
+	},
+	"author": {
+		"name": "David Kudera",
+		"email": "kudera.d@gmail.com"
+	},
+	"dependencies": {
+		"yargs": ">=4.2.0",
+		"colors": ">=1.1.2"
+	},
+	"devDependencies": {
+		"mocha": "~2.4.5",
+		"chai": "~3.5.0"
+	},
+	"scripts": {
+		"test": "mocha ./tests/tests.js"
+	}
+}
