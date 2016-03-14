@@ -1,9 +1,13 @@
 var path = require('path');
+var util = require('util');
+var EventEmitter = require('events').EventEmitter;
 var spawn = require('child_process').spawn;
 
 
 var Server = function(port)
 {
+	EventEmitter.call(this);
+
 	if (port == null) {
 		port = Server.DEFAULT_PORT;
 	}
@@ -11,6 +15,9 @@ var Server = function(port)
 	this.port = port;
 	this.server = null;
 };
+
+
+util.inherits(Server, EventEmitter);
 
 
 Server.DEFAULT_PORT = 3000;
@@ -28,10 +35,13 @@ Server.prototype.connect = function(cb)
 		throw err;
 	});
 
+	var _this = this;
 	this.server.stdout.on('data', function(data) {
 		if (cb && (data + '').match(/Listening\son\sport\s\d+/)) {
 			cb();
 		}
+
+		_this.emit('data', data + '');
 	});
 };
 

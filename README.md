@@ -90,6 +90,21 @@ var req = http.request({
 req.write(data);
 req.end();
 ```
+
+### Sending files
+
+Information about sent files is stored in response HTTP header `mirror-files`.
+
+```js
+console.log(JSON.parse(response.headers['mirror-files']));
+
+[
+	{
+		name: 'name of POST field',
+		filename: 'actual filename'
+	}
+]
+```
  
 ## Running server
 

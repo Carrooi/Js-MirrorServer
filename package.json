@@ -19,7 +19,9 @@
 	},
 	"devDependencies": {
 		"mocha": "~2.4.5",
-		"chai": "~3.5.0"
+		"chai": "~3.5.0",
+		"request": "~2.69.0",
+		"busboy": "~0.2.12"
 	},
 	"scripts": {
 		"test": "mocha ./tests/tests.js"
