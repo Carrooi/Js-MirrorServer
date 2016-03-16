@@ -1,7 +1,7 @@
 {
 	"name": "mirror-server",
 	"description": "Simple mirroring server usefull for testing.",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"license": "MIT",
 	"bin": "./bin/server.js",
 	"main": "./src/server.js",
