@@ -15,13 +15,13 @@
 	},
 	"dependencies": {
 		"yargs": ">=4.2.0",
-		"colors": ">=1.1.2"
+		"colors": ">=1.1.2",
+		"busboy": "~0.2.12"
 	},
 	"devDependencies": {
 		"mocha": "~2.4.5",
 		"chai": "~3.5.0",
-		"request": "~2.69.0",
-		"busboy": "~0.2.12"
+		"request": "~2.69.0"
 	},
 	"scripts": {
 		"test": "mocha ./tests/tests.js"
