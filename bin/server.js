@@ -25,6 +25,11 @@ var DEFAULT_SLEEP = 0;
 
 var MAX_SLEEP = 5000;
 
+var ALLOW_RESPONSE_HEADERS = [
+	'Content-Type', 'Content-Language', 'Cache-Control', 'Expires', 'Last-Modified', 'Pragma',
+	'Mirror-Files'
+];
+
 
 var processRequest = function(request, response, data, files)
 {
@@ -57,7 +62,8 @@ var processRequest = function(request, response, data, files)
 
 	var headers = {
 		'Content-Type': contentType,
-		'Access-Control-Allow-Origin': '*'
+		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Expose-Headers': ALLOW_RESPONSE_HEADERS.join(', ')
 	};
 
 	if (files) {
