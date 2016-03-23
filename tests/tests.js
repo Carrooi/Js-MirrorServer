@@ -180,8 +180,8 @@ describe('#mirror-server', function() {
 						throw err;
 					}
 
-					expect(response.headers).to.contain.keys(['mirror-files']);
-					expect(JSON.parse(response.headers['mirror-files'])).to.be.eql([
+					expect(response.headers).to.contain.keys(['x-mirror-files']);
+					expect(JSON.parse(response.headers['x-mirror-files'])).to.be.eql([
 						{
 							name: 'readme',
 							file: 'readme.md'

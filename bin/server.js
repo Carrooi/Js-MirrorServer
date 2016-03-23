@@ -27,7 +27,7 @@ var MAX_SLEEP = 5000;
 
 var ALLOW_RESPONSE_HEADERS = [
 	'Content-Type', 'Content-Language', 'Cache-Control', 'Expires', 'Last-Modified', 'Pragma',
-	'Mirror-Files'
+	'X-Mirror-Files'
 ];
 
 
@@ -78,7 +78,7 @@ var processRequest = function(request, response, data, files)
 		}
 
 		if (headerFiles.length) {
-			headers['Mirror-Files'] = JSON.stringify(headerFiles);
+			headers['X-Mirror-Files'] = JSON.stringify(headerFiles);
 		}
 	}
 

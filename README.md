@@ -93,10 +93,10 @@ req.end();
 
 ### Sending files
 
-Information about sent files is stored in response HTTP header `mirror-files`.
+Information about sent files is stored in response HTTP header `X-Mirror-Files`.
 
 ```js
-console.log(JSON.parse(response.headers['mirror-files']));
+console.log(JSON.parse(response.headers['x-mirror-files']));
 
 [
 	{
